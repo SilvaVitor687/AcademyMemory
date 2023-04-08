@@ -1,12 +1,142 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <title>MEMORY ACADEMY</title>
 </head>
 <body>
-    <h1>Carros</h1>
+
+    <%
+        let cars = [
+            {
+                name: 'Blazer 4x4 automático 16v Diesel',
+                camb: 'Automático',
+                km: '38.590',
+                comb: 'Diesel',
+                year: '2023',
+                price: '130.000.00',
+                img: '/img/Blazer.jpg'
+            },
+            {
+                name: 'Ford Maverick GT Motor V8 302',
+                camb: 'Automático',
+                km: '68.590',
+                comb: 'Gasolina',
+                year: '1973',
+                price: '180.000.00',
+                img: '/img/Antigo.jpg'
+            },
+            {
+                name: 'Tesla Model X Tração Integral 501',
+                camb: 'Automático',
+                km: '0000',
+                comb: 'Flex',
+                year: '2023',
+                price: '330.000.00',
+                img: '/img/Tesla.jpg'
+            },
+            {
+                name: 'Porsche 911 Turbo S 650CV Motor 3.8',
+                camb: 'Automático',
+                km: '6.590',
+                comb: 'Gasolina',
+                year: '2023',
+                price: '1.300.000.00',
+                img: '/img/Stable.jpg'
+            },
+            {
+                name: 'Kia Niro SUV Hibrido Elétrico EV9',
+                camb: 'Manual',
+                km: '28.590',
+                comb: 'Gasolina',
+                year: '2023',
+                price: '230.000.00',
+                img: '/img/Kia.jpg'
+            },
+            {
+                name: 'Novo Polo GTI 204 CV Hot Hatch',
+                camb: 'Manual',
+                km: '20.990',
+                comb: 'Flex',
+                year: '2022',
+                price: '90.000.00',
+                img: '/img/Golf.jpeg'
+            },
+            {
+                name: 'New BMW X1 1.5 Turbo sDrive 20i',
+                camb: 'Automático',
+                km: '0000',
+                comb: 'Gasolina',
+                year: '2023',
+                price: '292.000.00',
+                img: '/img/bmw.jpg'
+            },
+            {
+                name: 'New Elantra 2023 1.6 Turbo 201 CV',
+                camb: '',
+                km: '0000',
+                comb: 'Gasolina',
+                year: '2023/2024',
+                price: '84.000.00',
+                img: '/img/Elantra.jpg'
+            },
+        
+        ];
+    
+    %>
+
+    <header>
+        <div class="container">
+            
+            <a href="/"><img src="/img/Logo.png" alt=""></a>
+           
+            <ul>
+                <li>
+                    <a href="">Carros</a>
+                </li>
+                <li>
+                    <a href="/motos">Motos</a>
+                </li>
+                
+            </ul>
+            
+    </div>
+    </header>
+
+    
+    
+    <nav>
+        <%for(let car of cars) { %>
+                <main>
+                    
+                    <div class="contain">
+                        <img src="<%= car.img %>" alt="">
+
+                        <div class="title"> 
+                            <h1><%= car.name %></h1>
+                            <ul>
+                                <li><span>Câmbio:</span> <%= car.camb %></li>
+                                <li><span>Quilometragem:</span> <%= car.km %> KM</li>
+                                <li><span>Combustivel:</span> <%= car.comb %></li>
+                            </ul>
+
+                            <div class="years">
+                                <h3><%= car.year %></h3>
+                            </div>
+
+                            <div class="price">
+                                <p>Por apenas</p>
+                                <span>R$ <%= car.price %></span>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </main>
+            <% } %>
+        </nav>
+    
 </body>
 </html>

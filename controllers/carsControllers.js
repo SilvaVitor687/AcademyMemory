@@ -1,9 +1,9 @@
 const carsControllers = {
     cars: (req, res) => {
         res.render('cars')
-        const {id} = req.params;
+        /*const {id} = req.params;
 
-        console.log(id)
+        console.log(id)*/
     }
 }
 

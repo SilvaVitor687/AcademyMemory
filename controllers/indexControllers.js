@@ -1,7 +1,9 @@
+const veiculos = require('../config/BD');
+
 const indexControllers = {
-    index: (req, res) => {
-        res.render('index')
+    index: (req,res) => {       
+       return res.render('index', veiculos)
     }
 }
 
-module.exports = indexControllers
+module.exports = indexControllers;

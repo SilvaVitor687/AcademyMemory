@@ -8,10 +8,12 @@ const PORT = process.env.PORT || 3080;
 //Import da rota configurada na pasta ROUTER
 const indexRouter = require('./router/indexRouter');
 const carsControllers = require('./router/carsRouter');
+const motorsControllers = require('./router/motorsRouter');
 
 // Chamada da Rota
 app.use('/', indexRouter);
 app.use('/carros', carsControllers)
+app.use('/motos', motorsControllers)
 
 
 // Chamando a aplicação do EJS
