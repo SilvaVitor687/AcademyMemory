@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 const path = require("path");
+require('./database')
 
 // Configuração para rodar na PORTA
 const PORT = process.env.PORT || 3080;

@@ -1,0 +1,10 @@
+{
+    "development": {   
+        "username": "root", 
+        "password": "10739193@Vi",
+        "database": "db_auto", 
+        "host": "localhost", 
+        "dialect": "mysql", 
+        "operatorsAliases": false 
+    }
+}
