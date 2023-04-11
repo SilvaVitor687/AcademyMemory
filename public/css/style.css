@@ -126,12 +126,18 @@ header img {
 .container {
     display: flex;
     justify-content: space-between;
+    
+}
+
+.align ul{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   
 }
 
 header ul {
     display: flex;
-    justify-content:  right;
-    align-items: end;
     gap: 20px;
 }
 

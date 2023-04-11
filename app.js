@@ -10,10 +10,13 @@ const PORT = process.env.PORT || 3080;
 const indexRouter = require('./router/indexRouter');
 const carsControllers = require('./router/carsRouter');
 const motorsControllers = require('./router/motorsRouter');
+const usersRouter = require('./router/usersRouter');
 
 // Chamada da Rota
+app.use(express.json());
 app.use('/', indexRouter);
 app.use('/carros', carsControllers)
+app.use('/usuarios', usersRouter)
 app.use('/motos', motorsControllers)
 
 
