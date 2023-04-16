@@ -7,6 +7,7 @@ const usersControllers = require('../controllers/usersControllers');
 // Passando os métodos GET.
 router.get('/', usersControllers.users);
 router.post('/create', usersControllers.createUser)
+router.get('/list', usersControllers.listUsers)
 
 
 

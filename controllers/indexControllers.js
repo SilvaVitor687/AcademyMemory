@@ -1,13 +1,19 @@
 //const veiculos = require('../config/BD');
+const Automobiles = require('../models/Automobiles')
 
 
-const indexControllers = {
-    index: (req,res) => {       
-       return (
-        res.render('index')
-    )},
-
-    
+async function users(req,res) {
+    const auto = await Automobiles.findAll({
+        where: {
+            id: [1,10,17,5]
+        }
+    });
+    //console.log(list) 
+    return res.render('index', {auto})
 }
 
-module.exports = indexControllers;
+
+
+module.exports = {
+    users
+};

@@ -9,7 +9,7 @@
 </head>
 <body>
 
-    <%
+   <!-- <%
         let cars = [
             {
                 name: 'Blazer 4x4 automático 16v Diesel',
@@ -86,7 +86,7 @@
         
         ];
     
-    %>
+    %>-->
 
     <header>
         <div class="container">
@@ -106,36 +106,37 @@
     </div>
     </header>
 
-    
-    
+    <div style="margin-top: 150px;" class="destaques">
+        <h1>Confira nossos Carros</h1>
+    </div>
     <nav>
-        <%for(let car of cars) { %>
+        <% auto.forEach( element => { %>
                 <main>
-                    
                     <div class="contain">
-                        <img src="<%= car.img %>" alt="">
+                        <img src="<%=element.url%>" alt="">
 
                         <div class="title"> 
-                            <h1><%= car.name %></h1>
+                            <h1><%=element.name%></h1>
                             <ul>
-                                <li><span>Câmbio:</span> <%= car.camb %></li>
-                                <li><span>Quilometragem:</span> <%= car.km %> KM</li>
-                                <li><span>Combustivel:</span> <%= car.comb %></li>
+                                <li><span>Câmbio: </span><%=element.exchange%></li>
+                                <li><span>Quilometragem: </span><%=element.km%> km</li>
+                                <li><span>Combustivel: </span><%=element.fuel%></li>
                             </ul>
 
                             <div class="years">
-                                <h3><%= car.year %></h3>
+                                <h3><%=element.years%></h3>
                             </div>
 
                             <div class="price">
                                 <p>Por apenas</p>
-                                <span>R$ <%= car.price %></span>
+                                <span>R$ <%=element.price%></span>
                             </div>
                             
                         </div>
                     </div>
                 </main>
-            <% } %>
+                <%})%>
+           
         </nav>
     
 </body>

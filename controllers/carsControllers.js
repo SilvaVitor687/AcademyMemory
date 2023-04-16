@@ -1,10 +1,28 @@
-const carsControllers = {
-    cars: (req, res) => {
-        res.render('cars')
-        /*const {id} = req.params;
+const Automobiles = require('../models/Automobiles')
 
-        console.log(id)*/
-    }
+async function createAuto(req, res){
+    const { name, exchange, km , fuel, years, price, url } = req.body;
+    const createdAuto = await Automobiles.create({ name, exchange, km , fuel, years, price, url });
+
+    return res.json(createdAuto)
+
 }
 
-module.exports = carsControllers;
+async function cars (req, res) {
+    const auto = await Automobiles.findAll({
+        where: {
+            exchange: ['Automático','Manual']
+        }
+    });
+    console.log(auto)
+    return res.render('cars', {auto})
+}
+
+
+
+
+module.exports = {
+    createAuto,
+    cars,
+    
+};

@@ -9,90 +9,10 @@
 </head>
 <body>
 
-    <%
-        let cars = [
-            {
-                name: 'Blazer 4x4 automático 16v Diesel',
-                camb: 'Automático',
-                km: '38.590',
-                comb: 'Diesel',
-                year: '2023',
-                price: '130.000.00',
-                img: '/img/Blazer.jpg'
-            },
-            {
-                name: 'Ford Maverick GT Motor V8 302',
-                camb: 'Automático',
-                km: '68.590',
-                comb: 'Gasolina',
-                year: '1973',
-                price: '180.000.00',
-                img: '/img/Antigo.jpg'
-            },
-            {
-                name: 'Tesla Model X Tração Integral 501',
-                camb: 'Automático',
-                km: '0000',
-                comb: 'Flex',
-                year: '2023',
-                price: '330.000.00',
-                img: '/img/Tesla.jpg'
-            },
-            {
-                name: 'Porsche 911 Turbo S 650CV Motor 3.8',
-                camb: 'Automático',
-                km: '6.590',
-                comb: 'Gasolina',
-                year: '2023',
-                price: '1.300.000.00',
-                img: '/img/Stable.jpg'
-            },
-            {
-                name: 'Kia Niro SUV Hibrido Elétrico EV9',
-                camb: 'Manual',
-                km: '28.590',
-                comb: 'Gasolina',
-                year: '2023',
-                price: '230.000.00',
-                img: '/img/Kia.jpg'
-            },
-            {
-                name: 'Novo Polo GTI 204 CV Hot Hatch',
-                camb: 'Manual',
-                km: '20.990',
-                comb: 'Flex',
-                year: '2022',
-                price: '90.000.00',
-                img: '/img/Golf.jpeg'
-            },
-            {
-                name: 'Honda CBR Fireblade RR-R',
-                camb: '',
-                km: '0000',
-                comb: 'Gasolina',
-                year: '2021',
-                price: '60.000.00',
-                img: '/img/Moto_4.jpg'
-            },
-            {
-                name: '2021 HONDA CB1000R BLACK EDITION',
-                camb: '',
-                km: '0000',
-                comb: 'Gasolina',
-                year: '2021',
-                price: '46.000.00',
-                img: '/img/Moto_2.jpg'
-            },
-        
-        ];
-    
-    %>
-
     <header>
         <div class="container">
             
             <a href="/"><img src="/img/Logo.png" alt=""></a>
-
             <div class="align">
                 <ul>
                     <li>
@@ -114,37 +34,40 @@
         <div class="banner">
             <img src="/img/Banner.jpg" alt="">
         </div>
-    
-    
-    <nav>
-        <%for(let car of cars) { %>
+        <div class="destaques">
+            <h1>Nossos Destaques</h1>
+        </div>
+        
+        <nav>
+            <% auto.forEach( el => { %>
                 <main>
-                    
                     <div class="contain">
-                        <img src="<%= car.img %>" alt="">
+                        <img src="<%= el.url %>" alt="">
 
                         <div class="title"> 
-                            <h1><%= car.name %></h1>
+                            <h1><%= el.name %></h1>
                             <ul>
-                                <li><span>Câmbio:</span> <%= car.camb %></li>
-                                <li><span>Quilometragem:</span> <%= car.km %> KM</li>
-                                <li><span>Combustivel:</span> <%= car.comb %></li>
+                                <li><span>Câmbio:</span> <%= el.exchange%></li>
+                                <li><span>Quilometragem:</span> <%= el.km %> KM</li>
+                                <li><span>Combustivel:</span> <%= el.fuel %></li>
                             </ul>
 
                             <div class="years">
-                                <h3><%= car.year %></h3>
+                                <h3><%= el.years %></h3>
                             </div>
 
                             <div class="price">
                                 <p>Por apenas</p>
-                                <span>R$ <%= car.price %></span>
+                                <span>R$ <%= el.price %></span>
                             </div>
                             
                         </div>
                     </div>
                 </main>
-            <% } %>
+            <% }) %>
         </nav>
     
 </body>
+
+<script src="/testes.js"></script>
 </html>

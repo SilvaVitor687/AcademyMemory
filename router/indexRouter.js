@@ -6,7 +6,7 @@ const indexControllers = require('../controllers/indexControllers');
 
 
 // Passando os métodos GET.
-router.get('/', indexControllers.index);
+router.get('/', indexControllers.users);
 
 
 module.exports = router;

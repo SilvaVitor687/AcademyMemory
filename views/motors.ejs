@@ -9,49 +9,6 @@
 </head>
 <body>
 
-    <%
-        let cars = [
-            {
-                name: 'Kia Niro SUV Hibrido Elétrico EV9',
-                camb: 'Manual',
-                km: '28.590',
-                comb: 'Gasolina',
-                year: '2023',
-                price: '230.000.00',
-                img: '/img/Moto_3.jpg'
-            },
-            {
-                name: 'Novo Polo GTI 204 CV Hot Hatch',
-                camb: 'Manual',
-                km: '20.990',
-                comb: 'Flex',
-                year: '2022',
-                price: '90.000.00',
-                img: '/img/Moto_1.jpg'
-            },
-            {
-                name: 'Honda CBR Fireblade RR-R',
-                camb: '',
-                km: '0000',
-                comb: 'Gasolina',
-                year: '2021',
-                price: '60.000.00',
-                img: '/img/Moto_4.jpg'
-            },
-            {
-                name: '2021 HONDA CB1000R BLACK EDITION',
-                camb: '',
-                km: '0000',
-                comb: 'Gasolina',
-                year: '2021',
-                price: '46.000.00',
-                img: '/img/Moto_2.jpg'
-            },
-        
-        ];
-    
-    %>
-
     <header>
         <div class="container">
             
@@ -69,34 +26,36 @@
             
     </div>
     </header>
+    <div style="margin-top: 150px;" class="destaques">
+        <h1>Confira nossas Motos</h1>
+    </div>
     <nav>
-        <%for(let car of cars) { %>
+        <% auto.forEach( el => {  %>
                 <main>
                     
                     <div class="contain">
-                        <img src="<%= car.img %>" alt="">
+                        <img src="<%= el.url %>" alt="">
 
                         <div class="title"> 
-                            <h1><%= car.name %></h1>
+                            <h1><%= el.name %></h1>
                             <ul>
-                                <li><span>Câmbio:</span> <%= car.camb %></li>
-                                <li><span>Quilometragem:</span> <%= car.km %> KM</li>
-                                <li><span>Combustivel:</span> <%= car.comb %></li>
+                                <li><span>Quilometragem:</span> <%= el.km %> km</li>
+                                <li><span>Combustivel:</span> <%= el.fuel%></li>
                             </ul>
 
                             <div class="years">
-                                <h3><%= car.year %></h3>
+                                <h3><%= el.years %></h3>
                             </div>
 
                             <div class="price">
                                 <p>Por apenas</p>
-                                <span>R$ <%= car.price %></span>
+                                <span>R$ <%= el.price %></span>
                             </div>
                             
                         </div>
                     </div>
                 </main>
-            <% } %>
+            <% }) %>
         </nav>
     
 </body>

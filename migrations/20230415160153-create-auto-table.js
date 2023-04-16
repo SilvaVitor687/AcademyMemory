@@ -3,10 +3,10 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up (queryInterface, Sequelize) {   
-    await queryInterface.createTable(
+     await queryInterface.createTable(
       'Automobiles', 
       { 
-        id_auto: {
+        id: {
           type: Sequelize.INTEGER, // do tipo INT do SQL
           allowNull: false, // NOT NULL do SQL
           primaryKey: true, // PRIMARY KEY do SQL
@@ -24,10 +24,6 @@ module.exports = {
           type: Sequelize.STRING,
           allowNull: false,
         },
-        name: {
-          type: Sequelize.STRING,
-          allowNull: false,
-        },
         fuel: {
           type: Sequelize.STRING,
           allowNull: false,
@@ -39,15 +35,21 @@ module.exports = {
         price: {
           type: Sequelize.STRING,
           allowNull: false,
-        }
+        },
+        url: {
+          type: Sequelize.STRING,
+          allowNull: false,
+        },
+        createdAt: {
+          type: Sequelize.DATE,
+          allowNull: false
+        },
+        updatedAt: {
+          type: Sequelize.DATE,
+          allowNull: false
+        }  
 
       }      
     );
-     
-  },
-
-  async down (queryInterface, Sequelize) {
-    await queryInterface.dropTable('Automobiles');
-     
   }
-};
+}
